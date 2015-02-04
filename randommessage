@@ -1,0 +1,8 @@
+#!/bin/bash
+
+IFS=$'\r\n' GLOBIGNORE='*'   messages=`cat messages`
+msgs=()
+for msg in $messages ; do msgs+=($msg);  done
+
+x=${msgs[$RANDOM % ${#msgs[@]} ]}
+echo $x
