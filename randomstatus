@@ -1,0 +1,13 @@
+#!/bin/bash
+
+status="`./randommessage` "
+while [ -z "$finished" ]; do
+  new="$status#`./randomhashtag` "
+  if [ "${#new}" -lt "120" ] ; then
+    status=$new
+  else
+    finished="done"
+  fi
+done
+
+echo $status
